@@ -33,7 +33,7 @@
 
  */
 
-
+//projects
 $(document).on('ajaxComplete ready', function () {
     var SMDES = [],EL,EL_STORAGE_PATH;
     // Initialize markdown inputs.
@@ -50,7 +50,7 @@ $(document).on('ajaxComplete ready', function () {
                 {
                     name: "image",
                     action: function (editor) {
-                        $(editor).SMDEFileInsert({mode: "image"});
+                        $(editor).SMDEFileInsert({mode: "image",filter_folder:SMDE_FOLDER});
                     },
                     className: "fa fa-picture-o",
                     title: "Insert Image",

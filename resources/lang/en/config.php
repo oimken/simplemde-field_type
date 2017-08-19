@@ -1,24 +1,16 @@
 <?php
 
 return [
-    'buttons'     => [
-        'name'         => 'Buttons',
-        'instructions' => 'Specify which editor buttons to display.',
-    ],
-    'plugins'     => [
-        'name'         => 'Plugins',
-        'instructions' => 'Specify which plugins to display.',
-    ],
     'height'      => [
         'name'         => 'Height',
         'instructions' => 'Specify the editor height in pixels.',
     ],
-    'line_breaks' => [
-        'name'         => 'Line Breaks',
-        'instructions' => 'Use line beaks instead of paragraph tags?',
+    'auto_grow' => [
+        'name'         => 'Auto Growing',
+        'instructions' => 'Editor auto growing to match the content\'s height or not?',
     ],
-    'folders'     => [
-        'name'         => 'Folders',
-        'instructions' => 'Which folders are available for files and images?',
+    'folder'     => [
+        'name'         => 'Default Folder',
+        'instructions' => 'Specify a default folder to open for browser the images?',
     ],
 ];

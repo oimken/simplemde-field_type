@@ -5,10 +5,10 @@
 {{ asset_add("scripts.js", "oimken.field_type.simplemde::js/input.js") }}
 <script>
     var SMDE_HEIGHT = {{ field_type.config.height }},
-            SMDE_AUTOGROW = {{ field_type.config.auto_grow|default(true) }};
-    {% if config('app.debug') and field_type.storage_path %}
-        var SMDE_STORAGE_PATH = '{{ field_type.storage_path }}';
-    {% endif %}
+            SMDE_AUTOGROW = {{ field_type.config.auto_grow|default(true) }},
+            DEBUG =  {% if config('app.debug') and field_type.storage_path %}true{% else %}false{% endif %},
+            SMDE_FOLDER = '{{ field_type.config.folder }}';
+
 </script>
 <textarea
         class="form-control"

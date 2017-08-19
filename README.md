@@ -1,10 +1,11 @@
 # simplemde-field_type
-A markdown editor field type with file module support.
+A markdown editor field type with file module support for PyroCMS.
 
-### Feature
+### Features
 - Now you can browser the images and insert it into Markdown editor.
+- You can specify a default folder to browser(maybe should disable the folder filter add the same time).
 
-### ToDo:
+### Todo:
 - Upload files to insert.
 
 

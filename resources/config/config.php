@@ -1,5 +1,7 @@
 <?php
 
+use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
+
 return [
     'height' => [
         'type'     => 'anomaly.field_type.integer',
@@ -10,9 +12,17 @@ return [
             'step'          => 50,
         ],
     ],
+    'folder' => [
+        'type'   => 'anomaly.field_type.select',
+        'config' => [
+            'options' => function (FolderRepositoryInterface $folders) {
+                return $folders->all()->pluck('name', 'id')->all();
+            },
+            'default_value' => ''
+        ],
+    ],
     'auto_grow' => [
         'type'     => 'anomaly.field_type.boolean',
-        'required' => true,
         'config'   => [
             'default_value' => true
         ],

@@ -9,7 +9,7 @@
 
     SMDEFileInsert.DEFAULTS = {
         mode: 'image',
-        folders: ''
+        filter_folder: ''
     };
     SMDEFileInsert.prototype = {
         constructor: SMDEFileInsert,
