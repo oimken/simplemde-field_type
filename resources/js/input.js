@@ -35,12 +35,13 @@
 
 
 $(document).on('ajaxComplete ready', function () {
-    var SMDES = [];
+    var SMDES = [],EL,EL_STORAGE_PATH;
     // Initialize markdown inputs.
     $('[data-provides="oimken.field_type.simplemde"]:not([data-initialized])').each(function (i) {
         $(this).attr('data-initialized', '');
+        EL = $(this)[0];
         SMDES[i] = new SimpleMDE({
-            element: $(this)[0],
+            element: EL,
             // promptURLs: true,
             spellChecker: false,
             toolbar: [
@@ -57,11 +58,13 @@ $(document).on('ajaxComplete ready', function () {
                 "|", "preview", "side-by-side", "fullscreen"
             ]
         });
+        $(EL).siblings('.editor-statusbar').prepend($(EL).siblings('.editor-storage-path'));
 
-        if(SMDE_AUTOGROW) {
-            $('.CodeMirror, .CodeMirror-scroll').css('min-height', SMDE_HEIGHT + 'px');
-        } else {
-            $('.CodeMirror, .CodeMirror-scroll').css('height', SMDE_HEIGHT + 'px');
-        }
+
     });
+    if (SMDE_AUTOGROW) {
+        $('.CodeMirror, .CodeMirror-scroll').css('min-height', SMDE_HEIGHT + 'px');
+    } else {
+        $('.CodeMirror, .CodeMirror-scroll').css('height', SMDE_HEIGHT + 'px');
+    }
 });

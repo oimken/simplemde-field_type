@@ -1,5 +1,5 @@
 # simplemde-field_type
-A markdown editor field type whith file module support.
+A markdown editor field type with file module support.
 
 ### Feature
 - Now you can browser the images and insert it into Markdown editor.

@@ -6,7 +6,9 @@
 <script>
     var SMDE_HEIGHT = {{ field_type.config.height }},
             SMDE_AUTOGROW = {{ field_type.config.auto_grow|default(true) }};
-
+    {% if config('app.debug') and field_type.storage_path %}
+        var SMDE_STORAGE_PATH = '{{ field_type.storage_path }}';
+    {% endif %}
 </script>
 <textarea
         class="form-control"
@@ -17,9 +19,9 @@
         {{ field_type.readonly ? 'readonly' }}>{{ field_type.value }}</textarea>
 
 {% if config('app.debug') and field_type.storage_path %}
-    <small class="text-muted hidden-md">
+    <span class="text-muted hidden-md editor-storage-path" style="float:left;margin-left:0;">
         {{ field_type.storage_path }}
-    </small>
+    </span>
 {% endif %}
 
 <div class="modal remote" id="{{ field_type.input_name }}-modal">
