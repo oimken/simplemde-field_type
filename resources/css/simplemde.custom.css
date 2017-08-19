@@ -1,0 +1,17 @@
+/**  keep the height static */
+/**
+    .CodeMirror {
+        height: {{ field_type.config.height }}px;
+    }
+*/
+
+/** minimum height (auto-growing) **/
+/*
+.CodeMirror, .CodeMirror-scroll {
+min-height: {{ field_type.config.height }}px;
+}
+*/
+
+.CodeMirror-fullscreen, .editor-toolbar.fullscreen, .editor-preview-side {
+    z-index: 1000;
+}

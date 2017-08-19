@@ -1,0 +1,15 @@
+{
+    "name": "oimken/simplemde-field_type",
+    "type": "streams-addon",
+    "description": "A markdown editor field type whit file module support.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Oimken\\SimplemdeFieldType\\": "src/"
+        }
+    }
+}

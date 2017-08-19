@@ -1,0 +1,24 @@
+{{ asset_add('styles.css', 'oimken.field_type.simplemde::less/upload.less') }}
+
+{{ asset_add('scripts.js', 'oimken.field_type.simplemde::js/dropzone.min.js') }}
+{{ asset_add('scripts.js', 'oimken.field_type.simplemde::js/upload.js') }}
+
+{% for path in asset_paths("styles.css") %}
+    {{ html_style(path) }}
+{% endfor %}
+
+{% for path in asset_paths("scripts.js") %}
+    {{ html_script(path) }}
+{% endfor %}
+
+<div id="upload">
+
+    {% include "oimken.field_type.simplemde::upload/partials/header" %}
+    {% include "oimken.field_type.simplemde::upload/partials/body" %}
+    {% include "oimken.field_type.simplemde::upload/partials/template" %}
+
+    <div class="uploaded">
+        {{ table.content|raw }}
+    </div>
+
+</div>
